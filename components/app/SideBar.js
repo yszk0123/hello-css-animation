@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import { routes } from './routes';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -22,15 +23,13 @@ const Wrapper = styled.div`
 export const SideBar = () => {
   return (
     <Wrapper>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
-      <Link href="/example">
-        <a>Example</a>
-      </Link>
-      <Link href="/bounce-box">
-        <a>Bounce Box</a>
-      </Link>
+      {routes.map(({ path, title }) => {
+        return (
+          <Link key={path} href={path}>
+            <a>{title}</a>
+          </Link>
+        );
+      })}
     </Wrapper>
   );
 };
