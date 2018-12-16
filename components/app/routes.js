@@ -10,5 +10,9 @@ export const routes = [
   {
     path: '/bounce-box',
     title: 'Bounce box'
+  },
+  {
+    path: '/bounce-box-with-transform',
+    title: 'Bounce box with transform'
   }
 ];
